@@ -1,1 +1,1 @@
-web: gunicorn CAVARIETY.wsgi --log-file -
+web: gunicorn CAVARIETY.wsgi --workers 3 --worker-class gevent --timeout 30 --log-file -

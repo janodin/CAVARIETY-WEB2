@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAVARIETY</title>
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'camera_icon.png' %}">
+
+    <style>
+    body {
+        margin: 0; /* Ensure there is no default margin */
+        height: 100vh;
+        background-color: #f0f0f0;
+        background-image: url('{% static 'cacao_bg.jpg' %}');
+        background-size: cover; /* Cover the entire page */
+        background-position: center; /* Center the background image */
+    }
+    .navbar {
+        /* Assuming the navbar height is 50px */
+        height: 50px; /* Adjust based on actual navbar height */
+        background-color: #343a40; /* Example color */
+    }
+    .container {
+        /* Subtract the navbar height from 100vh */
+        height: calc(100vh - 50px); /* Adjust 50px to your navbar's actual height */
+        overflow: auto; /* Adds scroll to container if content exceeds its height */
+    }
+    .result img {
+        border: 3px solid rgb(0, 128, 0); /* RGB green border */
+        border-radius: 25px; /* Increased radius for more curved edges */
+        max-width: 300px;
+    }
+    .highlight-text {
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 153);
+        font-weight: 550;
+        padding: 5px; /* Add some padding */
+        border-radius: 5px; /* Slight rounding of corners */
+    }
+    </style>
+</head>
+<body>
+
+<nav class="navbar bg-dark mb-3">
+    <div class="container-fluid">
+        <span class="navbar-brand text-light mx-auto mb-0 h1 fw-bold">CAVARIETY: CACAO VARIETY IDENTIFICATION</span>
+    </div>
+</nav>
+
+<div class="container d-flex align-items-center justify-content-center">
+    <div class="result text-center">
+        <img src="{{ image_data }}" alt="Predicted Image">
+        <p class="mt-2 highlight-text">Predicted Label: <strong>{{ predicted_label }}</strong>
+            <br>
+            Accuracy: <strong>{{ accuracy }}</strong>
+        </p>
+    </div>
+</div>
+
+
+</body>
+</html>

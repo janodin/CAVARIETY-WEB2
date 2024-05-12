@@ -1,0 +1,1 @@
+web: gunicorn CAVARIETY.wsgi --log-file -

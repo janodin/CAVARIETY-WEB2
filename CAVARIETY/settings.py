@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-k%4!55#&9*64fv*6vx$7@yzxwv*v_je28co3z$qbevr)sysh59
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://cavariety-v2.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://cavariety-web.onrender.com']
 
 
 # Application definition

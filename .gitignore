@@ -5,4 +5,4 @@ env/
 db.sqlite3
 
 # Ignore the static folder
-static/svm_classifier.joblib
+#static/svm_classifier.joblib
